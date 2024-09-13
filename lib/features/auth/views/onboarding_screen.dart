@@ -4,9 +4,8 @@ import 'package:imaginify/core/theme/app_palette.dart';
 import 'package:imaginify/features/auth/views/auth_screen.dart';
 import 'package:imaginify/features/auth/widgets/custom_button.dart';
 
-
 class OnboardingScreen extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = '/onboarding';
   const OnboardingScreen({super.key});
   @override
   Widget build(BuildContext context) {
@@ -31,9 +30,9 @@ class OnboardingScreen extends StatelessWidget {
                     'assets/images/logo_transparent.png',
                     width: 70,
                   ),
-                  Text(
+                  const Text(
                     'Imaginify',
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -44,19 +43,8 @@ class OnboardingScreen extends StatelessWidget {
             child: Container(
               height: 350,
               width: double.infinity,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                colors: [
-                  Colors.transparent,
-                  AppPalette.background.withOpacity(0.40),
-                  AppPalette.background.withOpacity(0.75),
-                  AppPalette.background.withOpacity(0.95),
-                  AppPalette.background
-                ],
-                stops: const [0.0, 0.2, 0.3, 0.4, 0.5],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              )),
+              decoration:
+                  BoxDecoration(gradient: AppPalette.onboardingGradient),
               child: SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -64,8 +52,11 @@ class OnboardingScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text('Generate\nanything what\'s in\nyour mind now',
-                          style: Theme.of(context).textTheme.titleLarge,
+                      const Text('Generate\nanything what\'s in\nyour mind now',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 5),
                           textAlign: TextAlign.center),
                       const SizedBox(
                         height: 15,

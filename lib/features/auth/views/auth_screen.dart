@@ -3,18 +3,18 @@ import 'package:imaginify/core/theme/app_palette.dart';
 import 'package:imaginify/features/auth/widgets/social_button.dart';
 
 class AuthScreen extends StatelessWidget {
-  static const routeName = '/authScreen';
+  static const routeName = '/auth';
   const AuthScreen({super.key});
-
+  final double socialIconSize = 33;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppPalette.primaryButton,
+      backgroundColor: AppPalette.primary,
       body: Column(
         children: [
           SizedBox(
-            height: size.height * 0.3,
+            height: screenSize.height * 0.3,
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: SafeArea(
@@ -26,7 +26,7 @@ class AuthScreen extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w900,
-                          color: Colors.black),
+                          color: AppPalette.black),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
@@ -49,29 +49,77 @@ class AuthScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: AppPalette.background),
-              child:  Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Sign in to get started:', style: TextStyle(fontSize: 20),),
-                     const SizedBox(height: 30,),
-                      SocialButton(onPressed: (){}, icon: Image.asset('assets/images/google_icon.png', width: 33,), buttonText: 'Continue with Google'),
-                      const SizedBox(height: 20,),
-                      SocialButton(onPressed: (){}, icon: Image.asset('assets/images/facebook_icon.png', width: 33,), buttonText: 'Continue with Facebook'),
-                      const SizedBox(height: 20,),
-                      SocialButton(onPressed: (){}, icon: Image.asset('assets/images/apple_icon.png', width: 33,), buttonText: 'Continue with Apple'),
-                       const SizedBox(height: 20,),
-                      SocialButton(onPressed: (){}, icon: Image.asset('assets/images/linkedin_icon.png', width: 33,), buttonText: 'Continue with LinkedIn'),
-                       const SizedBox(height: 20,),
-                      SocialButton(onPressed: (){}, icon: Image.asset('assets/images/figma_icon.png', width: 33,), buttonText: 'Continue with Figma'),
-                       const SizedBox(height: 20,),
-                      SocialButton(onPressed: (){}, icon: Image.asset('assets/images/github_icon.png', width: 33,), buttonText: 'Continue with GitHub'),
-                      
-                      
-                  
-                      
+                      const Text(
+                        'Sign in to get started:',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      SocialButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/google_icon.png',
+                            width: socialIconSize,
+                          ),
+                          buttonText: 'Continue with Google'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SocialButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/facebook_icon.png',
+                            width: socialIconSize,
+                          ),
+                          buttonText: 'Continue with Facebook'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SocialButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/apple_icon.png',
+                            width: socialIconSize,
+                          ),
+                          buttonText: 'Continue with Apple'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SocialButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/linkedin_icon.png',
+                            width: socialIconSize,
+                          ),
+                          buttonText: 'Continue with LinkedIn'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SocialButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/figma_icon.png',
+                            width: socialIconSize,
+                          ),
+                          buttonText: 'Continue with Figma'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SocialButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            'assets/images/github_icon.png',
+                            width: socialIconSize,
+                          ),
+                          buttonText: 'Continue with GitHub'),
                     ],
                   ),
                 ),
