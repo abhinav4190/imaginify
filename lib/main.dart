@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:imaginify/core/shared/services/supabase_service.dart';
 import 'package:imaginify/core/theme/app_theme.dart';
 import 'package:imaginify/routes/app_route_config.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final supabaseService = SupabaseService();
+  await supabaseService.initialize();
+  
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

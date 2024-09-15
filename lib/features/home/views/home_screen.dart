@@ -7,7 +7,7 @@ import 'package:imaginify/features/home/widgets/prompt_model.dart';
 import 'package:imaginify/features/home/widgets/image_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = '/home';
   const HomeScreen({super.key});
 
   @override
